@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 24/03/2022
-# Versão: 0.27
+# Data de atualização: 14/05/2022
+# Versão: 0.29
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -32,12 +32,12 @@
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
 #
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	ssh vaamonde@172.16.1.20
-#	ssh vaamonde@ssh.pti.intra
+# 	ssh eandrade@172.16.10.20
+#	ssh eandrade@ssh.arena.intra
 #
 # Windows Powershell: Menu, Powershell 
-#	ssh vaamonde@172.16.1.20
-#	ssh vaamonde@ssh.pti.intra
+#	ssh eandrade@172.16.10.20
+#	ssh eandrade@ssh.arena.intra
 #
 # Linux Mint ou Windows:
 #	apt install putty putty-tools
@@ -59,7 +59,7 @@
 #		Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
 #		Enter passphrase (empty for no passphrase): <Enter>
 #		Enter same passphrase again: <Enter>
-#	ssh-copy-id vaamonde@172.16.1.20
+#	ssh-copy-id eandrade@172.16.10.20
 #
 # Importando os pares de chaves Públicas/Privadas utilizando o Powershell
 # Windows Powershell: Menu, Powershell 
