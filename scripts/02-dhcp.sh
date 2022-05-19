@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 23/03/2022
-# Versão: 0.14
+# Data de atualização: 19/05/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -26,14 +26,14 @@
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo NetworkManager --print-config (network management daemon)
 # 	sudo nmcli device status (command-line tool for controlling NetworkManager)
-# 	sudo nmcli device show enp0s3 (command-line tool for controlling NetworkManager)
-# 	sudo networkctl status enp0s3 (Query the status of network links)
+# 	sudo nmcli device show ens18 (command-line tool for controlling NetworkManager)
+# 	sudo networkctl status ens18 (Query the status of network links)
 # 	sudo ifconfig enp0s3 (configure a network interface)
-# 	sudo ip address show enp0s3 (show / manipulate routing, network devices, interfaces and tunnels)
+# 	sudo ip address show ens18 (show / manipulate routing, network devices, interfaces and tunnels)
 # 	sudo route -n (show/manipulate IP routing table)
 # 	sudo systemd-resolve --status (Resolve domain names, IPV4 and IPv6 addresses, DNS resource records, and services)
-# 	sudo dhclient -v -r enp0s3 (Dynamic Host Configuration Protocol Client)
-# 	sudo dhclient -v enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v -r ens18 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v ens18 (Dynamic Host Configuration Protocol Client)
 # 	sudo cat /var/lib/dhcp/dhclient.leases (DHCP client lease database)
 #
 # Windows Powershell: 
