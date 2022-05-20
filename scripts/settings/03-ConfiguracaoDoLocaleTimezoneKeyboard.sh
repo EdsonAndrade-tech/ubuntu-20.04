@@ -27,7 +27,7 @@ sudo reboot
 # Configuração do Timezone (Fuso Horário) do Sistema Operacional Ubuntu Server
 sudo timedatectl
 sudo systemctl status systemd-timesyncd.service
-sudo timedatectl set-timezone "Africa/Luanda"
+sudo timedatectl set-timezone "America/Sao_Paulo"
 # OBSERVAÇÃO IMPORTANTE: geralmente mudar para o Time Zone de America/Sao_Paulo a hora
 # fica errada no sistema, nesse caso podemos mudar para America/Fortaleza ou America/Bahia
 # esse error e por causa do Fuso Horário em relação ao Horário de Verão que não existe 
@@ -36,8 +36,8 @@ sudo cat /etc/timezone
 sudo cat /etc/systemd/timesyncd.conf
 sudo vim /etc/systemd/timesyncd.conf
 	[Time]
-	NTP=ao.pool.ntp.org
-	FallbackNTP=ao.pool.ntp.org
+	NTP=a.st1.ntp.br
+	FallbackNTP=a.ntp.br
 sudo systemctl restart systemd-timesyncd.service
 sudo systemctl status systemd-timesyncd.service
 sudo timedatectl

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.11
+# Data de atualização: 19/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do VSFTPd v3.0.x
@@ -108,7 +108,8 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -137,8 +138,8 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Configuração do TLS/SSL no VSFTPD no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Vsftpd Server TLS/SSL.: TCP 990"
+echo -e "Configuração do TLS/SSL no VSFTPd no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo VSFTPd Server TLS/SSL.: TCP 990"
 echo -e "Depois de executar a instalação da CA no GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
 echo -e "Confirmar o acesso com o Endereço IPv4: lftp ftps://$(hostname -I | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome CNAME: lftp ftps://ftp.$(hostname -d | cut -d' ' -f1)/"
@@ -191,7 +192,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do OpenSSL SSL/TLS no VSFTPd, aguarde...\n"
+echo -e "Iniciando a Configuração do OpenSSL TLS/SSL no VSFTPd, aguarde...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo de configuração do Certificado do VSFTPd, aguarde..."
@@ -352,7 +353,7 @@ echo -e "Reinicializando o serviço do VSFTPd Server, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do VsVSFTPdftpd Server, aguarde..."
+echo -e "Verificando o serviço do VSFTPd Server, aguarde..."
 	echo -e "VSFTPd: $(systemctl status vsftpd | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -364,6 +365,19 @@ echo -e "Verificando a porta de conexão do VSFTPd Server, aguarde..."
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:990 -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Testando o Certificado TLS/SSL do VSFTPd, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando echo: | (piper, faz a função de Enter no comando)
+	# opções do comando openssl: 
+	# s_client (command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS)
+	# -connect (The host and port to connect to)
+	# -servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
+	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
+	#
+	echo | openssl s_client -connect $IPV4SERVER:990 -servername ftp.$DOMINIOSERVER -showcerts &>> $LOG
+echo -e "Certificado do VSFTPd testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSL e TLS/SSL do VSFTPd feita com Sucesso!!!."

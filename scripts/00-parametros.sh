@@ -8,11 +8,9 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 13/05/2022
-# Versão: 0.65
+# Data de atualização: 19/05/2022
+# Versão: 0.66
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Customizado: Edson Andrade
-# Para: adr.arena - Prestação de Serviço 
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
 # no Ubuntu Server 20.04.x LTS, antes de modificar esse arquivo, veja os arquivos: BUGS, NEW e
@@ -52,18 +50,18 @@ export DEBIAN_FRONTEND="noninteractive"
 # Declarando as variáveis utilizadas nas configurações de Rede do Servidor Ubuntu 
 #
 # Variável do Usuário padrão utilizado no Servidor Ubuntu desse curso
-USUARIODEFAULT="eandrade"
+USUARIODEFAULT="vaamonde"
 #
 # Variável da Senha padrão utilizado no Servidor Ubuntu desse curso
 # OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
-SENHADEFAULT="adr@2022"
+SENHADEFAULT="pti@2018"
 #
 # Variável do Nome (Hostname) do Servidor Ubuntu desse curso
-NOMESERVER="srvapsws01"
+NOMESERVER="ptispo01ws01"
 #
 # Variável do Nome de Domínio do Servidor Ubuntu desse curso
 # OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
-DOMINIOSERVER="arena.intra"
+DOMINIOSERVER="pti.intra"
 #
 # Variável do Nome de Domínio NetBIOS do Servidor Ubuntu desse curso
 # OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
@@ -76,13 +74,13 @@ DOMINIONETBIOS="$(echo $DOMINIOSERVER | cut -d'.' -f1)"
 FQDNSERVER="$NOMESERVER.$DOMINIOSERVER"
 #
 # Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso
-IPV4SERVER="172.16.10.20"
+IPV4SERVER="172.16.1.20"
 #
 # Variável do Nome da Interface Lógica do Servidor Ubuntu Server desse curso
 # CUIDADO!!! o nome da interface de rede pode mudar dependendo da instalação do Ubuntu Server,
 # verificar o nome da interface com o comando: ip address show e mudar a variável INTERFACE com
 # o nome correspondente.
-INTERFACE="ens18"
+INTERFACE="enp0s3"
 #
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
 # CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da 
@@ -451,7 +449,7 @@ PASSWORDFTP=$SENHADEFAULT
 FTPDEP="bind9 bind9utils apache2 openssl"
 #
 # Variável de instalação do serviço de rede VSFTPd Server
-FTPINSTALL="vsftpd"
+FTPINSTALL="vsftpd lftp"
 #
 # Variáveis das portas de conexão padrão do VSFTPd Server
 PORTFTPDATA="20"
@@ -535,8 +533,8 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-A-openssl-ca.sh                     #
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-B-openssl-apache.sh                 #
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-C-openssl-vsftpd.sh                 #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-D-openssl-mysql.sh                  #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-E-openssl-tomcat.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-D-openssl-tomcat.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-E-openssl-mysql.sh                  #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) da Unidade Certificado Raiz Confiável do OpenSSL
@@ -556,6 +554,11 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # Arquivos de configuração (conf) da Geração do Certificado do Tomcat9
 # 01. /etc/ssl/tomcat9.conf = arquivo de configuração do certificado do Tomcat9
 # 02. /etc/tomcat9/server.xml = arquivo de configuração do Tomcat9 Server
+#
+# Arquivos de configuração (conf) da Geração do Certificado do MySQL
+# 01. /etc/ssl/mysql.conf = arquivo de configuração do certificado do MySQL
+# 02. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do MySQL Server
+# 03. /etc/mysql/mysql.conf.d/mysql.cnf = arquivo de configuração do MySQL Client
 #
 # Arquivos de monitoramento (log) do Serviço de Certificado OpenSSL utilizados nesse script
 # 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
@@ -585,7 +588,7 @@ CRIPTOCERT="sha256"
 DOWNLOADCERT="/var/www/html/download/"
 #
 # Variável das dependências do laço de loop do OpenSSL
-SSLDEPCA="openssl apache2"
+SSLDEPCA="openssl bind9 apache2"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webdav.sh                        #
@@ -1646,3 +1649,24 @@ DATABASE_NETDISCO="netdisco"
 # Variável da porta de conexão do Netdisco
 PORTNETDISCO="5000"
 #
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 35-openproject.sh                     #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema OpenProject utilizados nesse script
+# 01. /etc/apt/sources.list.d/openproject.list = arquivo de configuração das Lista do Apt
+# 02. /etc/openproject/installer.dat = arquivo de parâmetros da instalação do OpenProject
+#
+# Arquivos de monitoramento (log) do sistema OpenProject utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de OpenProject
+#
+# # Variável da chave GPG do repositório do OpenProject (Link atualizado no dia 14/05/2022)
+GPGOPENPROJECT="https://dl.packager.io/srv/opf/openproject/key"
+#
+# Variável das dependências do laço de loop do OpenProject
+OPENPROJECTDEP="bind9 apache2 php postgresql postgresql-contrib postgresql-client"
+#
+# Variável de instalação do OpenProject.
+OPENPROJECTINSTALL="openproject"
