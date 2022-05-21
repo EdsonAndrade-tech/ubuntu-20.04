@@ -169,8 +169,8 @@ PORTDHCP="67"
 # 07. /etc/bind/named.conf.options = arquivo de configuração do Serviço do Bind9
 # 08. /etc/bind/named.conf.default-zones = arquivo de configuração das Zonas Padrão do Bind9
 # 09. /etc/bind/rndc.key = arquivo de configuração das Chaves RNDC de integração Bind9 e DHCP
-# 10. /var/lib/bind/pti.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
-# 11. /var/lib/bind/172.16.1.rev = arquivo de configuração da Zona de Pesquisa Reversas
+# 10. /var/lib/bind/arena.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
+# 11. /var/lib/bind/172.16.10.rev = arquivo de configuração da Zona de Pesquisa Reversas
 # 12. /etc/default/named = arquivo de configuração do Daemon do Serviço do Bind9
 # 13. /etc/cron.d/dnsupdate-cron = arquivo de configuração das atualizações de Ponteiros
 # 14. /etc/cron.d/rndcupdate-cron = arquivo de configuração das atualizações das Estatísticas
@@ -189,10 +189,10 @@ PORTDHCP="67"
 DOMAIN=$DOMINIOSERVER
 #
 # Variável do nome da Pesquisa Reversa do Servidor de DNS
-DOMAINREV="1.16.172.in-addr.arpa"
+DOMAINREV="10.16.172.in-addr.arpa"
 #
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
-NETWORK="172.16.1."
+NETWORK="172.16.10."
 #
 # Variável de instalação do serviço de rede Bind DNS Server
 DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"

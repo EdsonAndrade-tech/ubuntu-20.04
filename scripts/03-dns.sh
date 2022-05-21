@@ -29,19 +29,19 @@
 # Testando o DNS no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T 
 #	nslookup pti.intra (query Internet name servers interactively)
-#	dig pti.intra (DNS lookup utility)
-#	host pti.intra (DNS lookup utility)
-#	ping pti.intra (send ICMP ECHO_REQUEST to network hosts)
+#	dig arena.intra (DNS lookup utility)
+#	host arena.intra (DNS lookup utility)
+#	ping arena.intra (send ICMP ECHO_REQUEST to network hosts)
 #
 # Windows Powershell.: 
-#	nslookup pti.intra
-#	nslookup 172.16.1.20
-#	nslookup ptispo01ws01
-#	nslookup ptispo01ws01.pti.intra
+#	nslookup arena.intra
+#	nslookup 172.16.10.20
+#	nslookup srvapsws01
+#	nslookup srvapsws01.arena.intra
 #	ipconfig /displaydns
-#	ping pti.intra
-#	Resolve-DnsName pti.intra
-#	Test-Connection pti.intra
+#	ping arena.intra
+#	Resolve-DnsName arena.intra
+#	Test-Connection arena.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -272,22 +272,22 @@ echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para c
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração pti.intra.hosts, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração arena.intra.hosts, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /var/lib/bind/pti.intra.hosts
-	named-checkzone $DOMAIN /var/lib/bind/pti.intra.hosts &>> $LOG
+	vim /var/lib/bind/arena.intra.hosts
+	named-checkzone $DOMAIN /var/lib/bind/arena.intra.hosts &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração 172.16.1.rev, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração 172.16.10.rev, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /var/lib/bind/172.16.1.rev
-	named-checkzone $DOMAINREV /var/lib/bind/172.16.1.rev &>> $LOG
-	named-checkzone $NETWORK /var/lib/bind/172.16.1.rev &>> $LOG
+	vim /var/lib/bind/172.16.10.rev
+	named-checkzone $DOMAINREV /var/lib/bind/172.16.10.rev &>> $LOG
+	named-checkzone $NETWORK /var/lib/bind/172.16.10.rev &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

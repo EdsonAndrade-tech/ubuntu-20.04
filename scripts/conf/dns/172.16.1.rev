@@ -21,12 +21,12 @@
 ; 	86400 = tempo de atualizações caso o refresh falhe retenção 1 (um) dia
 ; 	2419200 = tempo de expiração do slave caso não se contate com o master expiração 4 (quatro) semanas
 ; 	604800 = tempo de vida das repostas negativas do servidor mínimo retenção de 1 (uma) semana
-; @ IN 	NS	ptispo01ws01.pti.intra. = configuração do Name Server (Nome do Servidor) do domínio.
+; @ IN 	NS	srvapsws01.arena.intra. = configuração do Name Server (Nome do Servidor) do domínio.
 ; @ IN 	MX	10 mail = configuração do Mail Exchanger (registros de troca de e-mail) do domínio
 ;
-$ORIGIN 1.16.172.in-addr.arpa.
+$ORIGIN 10.16.172.in-addr.arpa.
 $TTL 3600 ; 1 hour
-@		IN		SOA		ptispo01ws01.pti.intra. vaamonde.pti.intra. (
+@		IN		SOA		srvapsws01.arena.intra. eandrade.arena.intra. (
 				1 ; serial
 				604800 ; refresh (1 week)
 				86400 ; retry (1 day)
@@ -34,9 +34,9 @@ $TTL 3600 ; 1 hour
 				604800 ; minimum (1 week)
 				)
 ;
-@		IN		NS		ptispo01ws01.pti.intra.
-@		IN		MX		10 mail.pti.intra.
+@		IN		NS		srvapsws01.arena.intra.
+@		IN		MX		10 mail.arena.intra.
 ;
-20		IN		PTR		ptispo01ws01.pti.intra.
-254		IN		PTR		ptispo01fw01.pti.intra.
+20		IN		PTR		srvapsws01.arena.intra.
+254		IN		PTR		srvapsfw01.arena.intra.
 

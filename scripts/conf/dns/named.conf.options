@@ -24,7 +24,7 @@ options {
 	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
 	// Padrão do encaminhamento é enviar as consultas para o servidor de Firewall pfSense
 	forwarders {
-		172.16.1.254;
+		172.16.10.254;
 		//8.8.8.8;
 		//8.8.4.4;
 	};
@@ -32,7 +32,7 @@ options {
 	// Número da porta de conexão do Bind9 DNS Server e Endereço IPv4 liberado.
 	listen-on port 53 { 
 		127.0.0.1; 
-		172.16.1.20; 
+		172.16.10.20; 
 	};
 
 	// Configuração do Protocolo IPv6 no Bind9 DNS Server (serviço desabilitado).

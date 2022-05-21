@@ -21,13 +21,13 @@
 ; 	86400 = tempo de atualizações caso o refresh falhe retenção 1 (um) dia
 ; 	2419200 = tempo de expiração do slave caso não se contate com o master expiração 4 (quatro) semanas
 ; 	604800 = tempo de vida das repostas negativas do servidor mínimo retenção de 1 (uma) semana
-; @ IN 	NS	ptispo01ws01.pti.intra. = configuração do Name Server (Nome do Servidor) do domínio.
+; @ IN 	NS	srvapsws01.arena.intra. = configuração do Name Server (Nome do Servidor) do domínio.
 ; @ IN 	MX	10 mail = configuração do Mail Exchanger (registros de troca de e-mail) do domínio
 ; @ IN	TXT	"v=spf1 a mx -all" = registro de Texto com informações do SPF (Sender Policy Framework)
 
-$ORIGIN pti.intra.
+$ORIGIN arena.intra.
 $TTL 3600 ; 1 hour
-@		IN		SOA		ptispo01ws01.pti.intra. vaamonde.pti.intra. (
+@		IN		SOA		srvapsws01.arena.intra. eandrade.arena.intra. (
 				1 ; serial
 				604800 ; refresh (1 week)
 				86400 ; retry (1 day)
@@ -35,36 +35,36 @@ $TTL 3600 ; 1 hour
 				604800 ; minimum (1 week)
 				)
 ;
-@               IN 		NS		ptispo01ws01.pti.intra.
+@               IN 		NS		srvapsws01.arena.intra.
 @               IN 		MX		10 mail
 @               IN		TXT		"v=spf1 a mx -all"
 ;
-pti.intra.      IN 		A 		172.16.1.20
-ptispo01ws01    IN 		A		172.16.1.20
-ptispo01fw01    IN 		A		172.16.1.254
-mail            IN 		A 		172.16.1.20
+arena.intra.      IN 		A 		172.16.10.20
+srvapsws01    IN 		A		172.16.10.20
+srvapsfw01    IN 		A		172.16.10.254
+mail            IN 		A 		172.16.10.20
 ;
-cloud           IN		CNAME	ptispo01ws01
-ftp             IN		CNAME	ptispo01ws01
-glpi            IN		CNAME	ptispo01ws01
-imap4           IN		CNAME	ptispo01ws01
-imap            IN		CNAME	ptispo01ws01
-loganalyzer     IN		CNAME	ptispo01ws01
-log             IN		CNAME	ptispo01ws01
-mysql           IN		CNAME	ptispo01ws01
-next            IN		CNAME	ptispo01ws01
-nfs             IN		CNAME	ptispo01ws01
-ntp             IN		CNAME	ptispo01ws01
-own             IN		CNAME	ptispo01ws01
-pop3            IN		CNAME	ptispo01ws01
-portal          IN		CNAME	ptispo01ws01
-pxe             IN		CNAME	ptispo01ws01
-smtp            IN		CNAME	ptispo01ws01
-ssh             IN		CNAME	ptispo01ws01
-tftp            IN		CNAME	ptispo01ws01
-webdav          IN		CNAME	ptispo01ws01
-wpad            IN		CNAME	ptispo01ws01
-wp              IN		CNAME	ptispo01ws01
-www             IN		CNAME	ptispo01ws01
-zm              IN		CNAME	ptispo01ws01
+cloud           IN		CNAME	srvapsws01
+ftp             IN		CNAME	srvapsws01
+glpi            IN		CNAME	srvapsws01
+imap4           IN		CNAME	srvapsws01
+imap            IN		CNAME	srvapsws01
+loganalyzer     IN		CNAME	srvapsws01
+log             IN		CNAME	srvapsws01
+mysql           IN		CNAME	srvapsws01
+next            IN		CNAME	srvapsws01
+nfs             IN		CNAME	srvapsws01
+ntp             IN		CNAME	srvapsws01
+own             IN		CNAME	srvapsws01
+pop3            IN		CNAME	srvapsws01
+portal          IN		CNAME	srvapsws01
+pxe             IN		CNAME	srvapsws01
+smtp            IN		CNAME	srvapsws01
+ssh             IN		CNAME	srvapsws01
+tftp            IN		CNAME	srvapsws01
+webdav          IN		CNAME	srvapsws01
+wpad            IN		CNAME	srvapsws01
+wp              IN		CNAME	srvapsws01
+www             IN		CNAME	srvapsws01
+zm              IN		CNAME	srvapsws01
 
