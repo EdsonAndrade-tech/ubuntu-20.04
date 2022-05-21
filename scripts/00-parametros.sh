@@ -213,8 +213,8 @@ PORTRNDC="953"
 #
 # Arquivos de monitoramento (log) dos Serviços de Rede Bind9 e do DHCP utilizados nesse script
 # 01. dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
-# 02. less /var/lib/bind/pti.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
-# 03. less /var/lib/bind/172.16.1.rev = arquivo de configuração da Zona de Pesquisa Reversas
+# 02. less /var/lib/bind/arena.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
+# 03. less /var/lib/bind/172.16.10.rev = arquivo de configuração da Zona de Pesquisa Reversas
 #
 # Declarando a variável de geração da chave de atualização dos registros do Bind DNS Server 
 # integrado no ISC DHCP Server

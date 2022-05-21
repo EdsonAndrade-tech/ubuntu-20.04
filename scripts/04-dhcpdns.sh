@@ -58,11 +58,11 @@
 #	netsh interface show interface
 #	netsh interface ip show interface
 #	netsh interface ip show config
-#	nslookup pti.intra
+#	nslookup arena.intra
 #	ipconfig /displaydns
-#	ping pti.intra
-#	Resolve-DnsName pti.intra
-#	Test-Connection pti.intra
+#	ping arena.intra
+#	Resolve-DnsName arena.intra
+#	Test-Connection arena.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
