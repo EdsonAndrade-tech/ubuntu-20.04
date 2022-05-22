@@ -249,13 +249,13 @@ DHCPDNSDEP="isc-dhcp-server bind9"
 # Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
 #
 # Variável de sincronização do NTP Server com o Site ntp.br
-NTPSERVER="a.st1.ntp.br"
+NTPSERVER="ao.pool.ntp.org"
 #
 # Variável do Zona de Horário do Ubuntu Server
-TIMEZONE="America/Sao_Paulo"
+TIMEZONE="Africa/Luanda"
 #
 # Variável de Configuração do Locale do Ubuntu Server
-LOCALE="pt_BR.UTF-8"
+LOCALE="en_US.UTF-8"
 #
 # Variável das dependências do laço de loop do NTP Server
 NTPDEP="isc-dhcp-server"

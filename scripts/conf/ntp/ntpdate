@@ -17,7 +17,7 @@ NTPDATE_USE_NTP_CONF=yes
 #
 # Configuração da lista de servidores padrão utilizado pelo ntpdate caso o
 # arquivo localizado em: /etc/ntp.conf não exista.
-NTPSERVERS="a.st1.ntp.br a.ntp.br"
+NTPSERVERS="ao.pool.ntp.org africa.pool.ntp.org"
 #
 # Configurações adicionais passadas para o comando ntpdate por padrão
 NTPOPTIONS=""

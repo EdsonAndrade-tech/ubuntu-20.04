@@ -271,7 +271,7 @@ echo -e "Atualizando o Timezone e Locale do Servidor, aguarde..."
 	timedatectl set-timezone "$TIMEZONE" &>> $LOG
 	locale-gen $LOCALE &>> $LOG
 	localectl set-locale LANG=$LOCALE &>> $LOG
-	update-locale LANG=$LOCALE LC_ALL=$LOCALE LANGUAGE="pt_BR:pt:en" &>> $LOG
+	update-locale LANG=$LOCALE LC_ALL=$LOCALE LANGUAGE="en_US.UTF-8" &>> $LOG
 echo -e "Timezone e Locale atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
