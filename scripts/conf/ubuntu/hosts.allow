@@ -46,7 +46,7 @@ vsftpd: 172.16.10.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host 
 # DAEMON   CLIENT     OPTION
 in.tftpd: 172.16.10.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-tftpd.log
 #
-# Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de NFS
+# Permitindo a Rede 172.16.10.0/24 se autenticar remotamente no Servidor de NFS
 # DAEMON   CLIENT     OPTION
 rpc.idmapd: 172.16.10.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
 rpc.mountd: 172.16.10.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
