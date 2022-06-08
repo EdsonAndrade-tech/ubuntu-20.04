@@ -13,6 +13,6 @@
 #
 # Configurações principais do Cliente de MySQL Server
 [mysql]
-#ssl_ca=/etc/ssl/certs/pti-ca.pem
+#ssl_ca=/etc/ssl/certs/arena-ca.pem
 #ssl_cert=/etc/ssl/newcerts/mysql.crt
 #ssl_key=/etc/ssl/private/mysql.key
