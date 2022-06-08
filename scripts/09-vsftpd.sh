@@ -33,15 +33,15 @@
 #		put linux.txt (ou mput)
 #	Gerenciador de Arquivos Neno
 #		Ctrl+L
-#			ftp://ftp.pti.intra
+#			ftp://ftp.arena.intra
 #				Usuário Registrado
 #					Usuário: ftpuser
-#					Senha..: pti@2018
+#					Senha..: adr@2022
 #	Cliente de FTP FileZilla
 #		sudo apt update && sudo apt install filezilla
-#			Host...: ftp.pti.intra
+#			Host...: ftp.arena.intra
 #			Usuário: ftpuser
-#			Senha..: pti@2018
+#			Senha..: adr@2022
 #			Porta..: 21
 #
 # Windows Powershell:
@@ -49,16 +49,16 @@
 #	precisar desativar o Firewall ou Criar Regras de Permissão de Envio e Recebimento do
 #	Protocolo FTP das portas 20 e 21 do FTP Client no Windows.
 # 	New-Item -Path '.\windows.txt' -ItemType File
-#	ftp ftp.pti.intra
+#	ftp ftp.arena.intra
 #		verbose
 #		status
 #		get robson.txt
 #		put windows.txt
 #	Gerenciador de Arquivos Windows Explorer
 #		Ctrl+L
-#			ftp://ftpuser@ftp.pti.intra
+#			ftp://ftpuser@ftp.arena.intra
 #				Usuário: ftpuser
-#				Senha..: pti@2018
+#				Senha..: adr@2022
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -300,6 +300,7 @@ echo -e "Reinicializando os serviços do Vsftpd Server e do Rsyslog, aguarde..."
 	# opção do comando chown: -v (verbose), syslog (user), root (group)
 	systemctl restart vsftpd &>> $LOG
 	systemctl restart rsyslog &>> $LOG
+	chown -v syslog.root /var/log/vsftpd.log &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
