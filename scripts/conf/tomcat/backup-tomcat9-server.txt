@@ -31,7 +31,7 @@ keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeyst
 		SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"
 		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
 		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" 
-		SSLCACertificateFile="/etc/ssl/certs/pti-ca.pem" />
+		SSLCACertificateFile="/etc/ssl/certs/arena-ca.pem" />
 	-->
 	<!--
 	<Connector name="Secure"
