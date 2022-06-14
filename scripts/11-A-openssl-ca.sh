@@ -48,15 +48,15 @@
 #	Preferências ou Opções ou Configurações
 #		Pesquisar em preferências: Ver certificados
 #			Autoridades
-#				Importar: pti-ca.crt
+#				Importar: arena-ca.crt
 #					Yes: Confiar nesta CA para identificar sites
 #					Yes: Confiar nesta autoridade certificadora para identificar usuários de email
 #					<Ver> Examinar certificado da CA
 #					<OK>
 #				<OK>
 #			Autoridades
-#				Bora para Pratica
-#					ptispo01ws01.pti.intra
+#				adr.arena
+#					srvapsws01.arena.intra
 #
 # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux)
 # chrome://settings/certificates
