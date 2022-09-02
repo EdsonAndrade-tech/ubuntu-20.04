@@ -5,4 +5,4 @@
 # Data de atualização: 
 # Versão: 0.01
 # Ubuntu Server 20.04.x LTS x64 
-#
+#dgdgsdgdgdgdg
