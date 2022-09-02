@@ -1,0 +1,26 @@
+#!/bin/bash
+# Autor: Edson Andrade
+# Github: https://github.com/EdsonAndrade-tech
+# Data de criação: 02/09/2022
+# Data de atualização: 
+# Versão: 0.01
+# Ubuntu Server 20.04.x LTS x64 
+#
+# Comando utilizado para verificar se o serviço (daemon) de rede tem suporte 
+# ao TCPWrappers: ldd /usr/sbin/sshd | grep libwrap (Biblioteca LibWrap)
+# Negando todas as redes acessarem os serviços remotamente do Ubuntu Server, 
+# somente os serviços e redes configuradas no arquivo host.allow estão liberados 
+# para acessar o servidor.
+# Logando todas as informações de acesso negado de todos os serviços no arquivos 
+# de Log em: /var/log/tcpwrappers-deny-.log
+#
+# Negando todas as Redes de acessar remotamente os serviços no Servidor Ubuntu
+# DAEMON   CLIENT     OPTION
+ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-deny.log
+#
+# Exemplos de configuração do TCPWrappers do arquivo hosts.deny:
+# Negando uma subrede ou nome de domínio FQDN para um serviço
+#sshd: 192.168.10. : spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.log
+#sshd: 192.168.10.0/255.255.255.0: spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.logg
+#sshd: *.arena.intra: spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.log
+#sshd: 192.168.10. EXCEPT 192.168.10.11: spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.log

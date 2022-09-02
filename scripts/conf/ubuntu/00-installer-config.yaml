@@ -1,0 +1,32 @@
+#!/bin/bash
+# Autor: Edson Andrade
+# Github: https://github.com/EdsonAndrade-tech
+# Data de criação: 02/09/2022
+# Data de atualização: 
+# Versão: 0.01
+# Ubuntu Server 20.04.x LTS x64
+#
+# Configuração do Endereço IPv4 do Ubuntu Server
+network:
+  # Configuração do Protocolo Ethernet do Ubuntu Server
+  ethernets:
+    # Configuração do Nome da Placa de Rede do Ubuntu Server
+    ens18:
+      # Configuração do Endereço IPv4 e CIDR Estático do Ubuntu Server
+      addresses:
+      - 172.16.10.20/24
+      # Configuração do Endereço de Gateway IPv4 do Ubuntu Server
+      gateway4: 172.16.10.254
+      # Configuração dos Endereços de DNS Server IPv4 do Ubuntu Server
+      nameservers:
+        addresses:
+        #- 172.16.10.20
+        - 172.16.10.254
+        #- 8.8.8.8
+        #- 8.8.4.4
+        # Configuração do Nome de Pesquisa DNS do Ubuntu Server
+        search:
+        - arena.intra
+        #
+  # Configuração da versão do Protocolo Ethernet do Ubuntu Server
+  version: 2
