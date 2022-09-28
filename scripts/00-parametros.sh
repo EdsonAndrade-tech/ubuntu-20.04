@@ -57,8 +57,9 @@ INTERFACE="ens18"
 NETPLAN="/etc/netplan/00-installer-config.yaml"
 #===========================================================================================#
 
-#				VARIÁVEIS UTILIZADAS NO SCRIPT: 01-openssh.sh                     
-#
+#						VARIÁVEIS UTILIZADAS NO SCRIPT: 01-openssh.sh                     
+
+
 #	Arquivos de configuração (conf) do Serviço de Rede OpenSSH utilizados nesse script
 # 		01. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 # 		02. /etc/hostname = arquivo de configuração do Nome FQDN do Servidor
@@ -94,3 +95,30 @@ PORTSSH="22"
 
 # Variável da porta de conexão padrão do Shell-In-a-Box
 PORTSHELLINABOX="4200"
+#=============================================================================================
+
+#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        
+
+
+# Arquivos de configuração (conf) do Serviço de Rede ISC DHCP Sever utilizados nesse script
+# 01. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+# 02. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+# 03. /etc/default/isc-dhcp-server = arquivo de configuração do serviço do ISC DHCP Server
+#
+# Arquivos de monitoramento (log) do Serviço de Rede ISC DHCP Server utilizados nesse script
+# 01. systemctl status isc-dhcp-server = status do serviço do ISC DHCP
+# 02. journalctl -t dhcpd = todas as mensagens referente ao serviço do ISC DHCP
+# 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
+# 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
+# 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
+# 06. dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
+# 07. tcpdump -vv -n -i enp0s3 port bootps or port bootpc = dump dos pacotes do ISC DHCP
+#
+# Variável de instalação do serviço de rede ISC DHCP Server
+DHCPINSTALL="isc-dhcp-server net-tools"
+#
+# Variável de download do arquivo do IEEE OUI (Organizationally Unique Identifier)
+#OUI="https://standards-oui.ieee.org/oui/oui.txt"
+#
+# Variável da porta de conexão padrão do ISC DHCP Server
+PORTDHCP="67"
