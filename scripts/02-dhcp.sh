@@ -1,11 +1,11 @@
 #!/bin/bash
-# Autor: Edson Andrade
+#Autor: Edson Andrade
 # Github: https://github.com/EdsonAndrade-tech
 # Data de criação: 02/09/2022
 # Data de atualização: 28/09/2022
 # Versão: 0.02
 # Ubuntu Server 20.04.x LTS x64
-
+#
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -195,8 +195,8 @@ echo -e "Atualizando os arquivos de configuração do ISC DHCP Server, aguarde..
 	mv -v /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server.old &>> $LOG
 	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/ &>> $LOG
 	cp -v conf/dhcp/isc-dhcp-server /etc/default/ &>> $LOG
-	cp -v conf/dhcp/isc-dhcp-server.service /lib/systemd/system/ &>> $LOG
-	wget $OUI -P /usr/local/etc/ &>> $LOG
+	#cp -v conf/dhcp/isc-dhcp-server.service /lib/systemd/system/ &>> $LOG
+	#wget $OUI -P /usr/local/etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

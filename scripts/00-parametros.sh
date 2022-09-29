@@ -6,38 +6,38 @@
 # Versão: 0.02
 # Ubuntu Server 20.04.x LTS x64 
 #============================================================================================#
-
+#
 #				VARIÁVEIS GLOBAIS UTILIZADAS EM TODOS OS SCRIPTS                       
-
+#
 # Calcular o tempo de execução do script
 HORAINICIAL=$(date +%T)
-
+#
 # Verificando se o usuário é "Root" e versão do Ubuntu 
 USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
-
+#
 # Variável do Caminho e Nome do arquivo de Log utilizado em todos os script
 LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
-
+#
 # Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração e
 # nenhuma interação durante a instalação ou atualização do sistema via Apt ou Apt-Get
 export DEBIAN_FRONTEND="noninteractive"
 #============================================================================================#
-
+#
 #				VARIÁVEIS DE REDE DO SERVIDOR UTILIZADAS EM TODOS OS SCRIPTS  
-
+#
 # Variável do Usuário padrão utilizado no Servidor Ubuntu
 USUARIODEFAULT="andrade"
-
+#
 # Variável da Senha padrão utilizado no Servidor Ubuntu
 SENHADEFAULT="adr@2021"
-
+#
 # Variável do Nome (Hostname) do Servidor Ubuntu 
 NOMESERVER="srvapsws01"
-
+#
 # Variável do Nome de Domínio do Servidor Ubuntu
 DOMINIOSERVER="arena.intra"
-
+#
 # Variável do Nome de Domínio NetBIOS do Servidor Ubuntu
 # OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis
 DOMINIONETBIOS="$(echo $DOMINIOSERVER | cut -d'.' -f1)"
@@ -56,10 +56,10 @@ INTERFACE="ens18"
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
 NETPLAN="/etc/netplan/00-installer-config.yaml"
 #===========================================================================================#
-
+#
 #						VARIÁVEIS UTILIZADAS NO SCRIPT: 01-openssh.sh                     
-
-
+#
+#
 #	Arquivos de configuração (conf) do Serviço de Rede OpenSSH utilizados nesse script
 # 		01. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 # 		02. /etc/hostname = arquivo de configuração do Nome FQDN do Servidor
@@ -86,20 +86,20 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 # Variável das dependências do laço de loop do OpenSSH Server
 SSHDEP="openssh-server openssh-client"
-
+#
 # Variável de instalação dos softwares extras do OpenSSH Server
 SSHINSTALL="net-tools traceroute ipcalc nmap tree pwgen neofetch shellinabox"
-
+#
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"
-
+#
 # Variável da porta de conexão padrão do Shell-In-a-Box
 PORTSHELLINABOX="4200"
 #=============================================================================================
-
+#
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        
-
-
+#
+#
 # Arquivos de configuração (conf) do Serviço de Rede ISC DHCP Sever utilizados nesse script
 # 01. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 # 02. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede

@@ -6,18 +6,18 @@
 # Versão: 0.01
 # Ubuntu Server 20.04.x LTS x64 
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
-
+#
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Site Oficial do Projeto Shell-In-a-Box: https://code.google.com/archive/p/shellinabox/
 # Site Oficial do Projeto Neofetch: https://github.com/dylanaraps/neofetch
-
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
 # Configuração da variável de Log utilizado nesse script
 LOG=$LOGSCRIPT
-
+#
 # Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
 if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then

@@ -5,7 +5,7 @@
 # Versão: 0.01
 # Ubuntu Server 20.04.x LTS x64 
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
-
+#
 # Incluindo o diretório de configuração personalizada do OpenSSH Server
 Include /etc/ssh/sshd_config.d/*.conf
 #
