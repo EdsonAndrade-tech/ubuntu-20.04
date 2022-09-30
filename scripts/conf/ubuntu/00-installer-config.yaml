@@ -37,4 +37,4 @@ network:
         - arena.intra
         #
   # Configuração da versão do Protocolo Ethernet do Ubuntu Server
-  version: 2
+version: 2
