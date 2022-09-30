@@ -1,11 +1,15 @@
 #!/bin/bash
-#Autor: Edson Andrade
-# Github: https://github.com/EdsonAndrade-tech
-# Data de criação: 02/09/2022
-# Data de atualização: 28/09/2022
-# Versão: 0.02
-# Ubuntu Server 20.04.x LTS x64
-#
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 09/09/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -22,14 +26,14 @@
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo NetworkManager --print-config (network management daemon)
 # 	sudo nmcli device status (command-line tool for controlling NetworkManager)
-# 	sudo nmcli device show ens18 (command-line tool for controlling NetworkManager)
-# 	sudo networkctl status ens18 (Query the status of network links)
-# 	sudo ifconfig ens18 (configure a network interface)
-# 	sudo ip address show ens18 (show / manipulate routing, network devices, interfaces and tunnels)
+# 	sudo nmcli device show enp0s3 (command-line tool for controlling NetworkManager)
+# 	sudo networkctl status enp0s3 (Query the status of network links)
+# 	sudo ifconfig enp0s3 (configure a network interface)
+# 	sudo ip address show enp0s3 (show / manipulate routing, network devices, interfaces and tunnels)
 # 	sudo route -n (show/manipulate IP routing table)
 # 	sudo systemd-resolve --status (Resolve domain names, IPV4 and IPv6 addresses, DNS resource records, and services)
-# 	sudo dhclient -v -r ens18 (Dynamic Host Configuration Protocol Client)
-# 	sudo dhclient -v ens18 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v -r enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v enp0s3 (Dynamic Host Configuration Protocol Client)
 # 	sudo cat /var/lib/dhcp/dhclient.leases (DHCP client lease database)
 #
 # Windows Powershell: 
@@ -195,8 +199,8 @@ echo -e "Atualizando os arquivos de configuração do ISC DHCP Server, aguarde..
 	mv -v /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server.old &>> $LOG
 	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/ &>> $LOG
 	cp -v conf/dhcp/isc-dhcp-server /etc/default/ &>> $LOG
-	#cp -v conf/dhcp/isc-dhcp-server.service /lib/systemd/system/ &>> $LOG
-	#wget $OUI -P /usr/local/etc/ &>> $LOG
+	cp -v conf/dhcp/isc-dhcp-server.service /lib/systemd/system/ &>> $LOG
+	wget $OUI -P /usr/local/etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

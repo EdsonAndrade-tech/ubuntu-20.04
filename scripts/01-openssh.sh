@@ -1,16 +1,75 @@
 #!/bin/bash
-# Autor: Edson Andrade
-# Github: https://github.com/EdsonAndrade-tech
-# Data de criação: 02/09/2022
-# Data de atualização: 30/09/2022 
-# Versão: 0.03
-# Ubuntu Server 20.04.x LTS x64 
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 24/03/2022
+# Versão: 0.27
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do OpenSSH Server v8.2.x
+#
+# OpenSSH (Open Secure Shell) é um conjunto de utilitários de rede relacionado à segurança que 
+# provém a criptografia em sessões de comunicações em uma rede de computadores usando o protocolo 
+# SSH. Foi criado com um código aberto alternativo ao código proprietário da suíte de softwares 
+# Secure Shell, oferecido pela SSH Communications Security. OpenSSH foi desenvolvido como parte 
+# do projeto OpenBSD.
+#
+# O TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a 
+# servidores de protocolo de Internet (IP) em sistemas operacionais do tipo Unix, como Linux ou 
+# BSD. Ele permite que o host, endereços IP de sub-rede, nomes e/ou respostas de consulta ident, 
+# sejam usados como tokens sobre os quais realizam-se filtros para propósitos de controle de acesso.
 #
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Site Oficial do Projeto Shell-In-a-Box: https://code.google.com/archive/p/shellinabox/
 # Site Oficial do Projeto Neofetch: https://github.com/dylanaraps/neofetch
 #
+# Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
+#
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	ssh vaamonde@172.16.1.20
+#	ssh vaamonde@ssh.pti.intra
+#
+# Windows Powershell: Menu, Powershell 
+#	ssh vaamonde@172.16.1.20
+#	ssh vaamonde@ssh.pti.intra
+#
+# Linux Mint ou Windows:
+#	apt install putty putty-tools
+#	windows: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+#
+# Verificando os usuários logados na sessão do OpenSSH Server no Ubuntu Server
+# Terminal:
+#	sudo who -a (show who is logged on)
+#	sudo w (Show who is logged on and what they are doing)
+#	sudo users (print the user names of users currently logged in to the current host)
+#	sudo last -a | grep 'still logged in' (show a listing of last logged in users)
+#	sudo ss | grep -i ssh (another utility to investigate sockets)
+#	sudo netstat -tnpa | grep 'ESTABLISHED.*sshd' (show networking connection)
+#	sudo ps -axfj | grep sshd (report a snapshot of the current processes)
+#
+# Gerando os pares de chaves Pública/Privadas utilizando o GNU/Linux
+# Linux Mint Terminal: Ctrl+Alt+T
+#	ssh-keygen
+#		Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
+#		Enter passphrase (empty for no passphrase): <Enter>
+#		Enter same passphrase again: <Enter>
+#	ssh-copy-id vaamonde@172.16.1.20
+#
+# Importando os pares de chaves Públicas/Privadas utilizando o Powershell
+# Windows Powershell: Menu, Powershell 
+#	Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
+#		Get-Service ssh-agent <Enter>
+#		Set-Service ssh-agent -StartupType Manual <Enter> (Ou mudar para: Automatic)
+#		Start-Service ssh-agent <Enter>
+#
+#	Segunda etapa: Powershell do perfil do usuário sem ser como administrador
+#		ssh-add .\vaamonde <Enter>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
