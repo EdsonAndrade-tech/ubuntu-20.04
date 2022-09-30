@@ -296,7 +296,7 @@ MEMTEST86V9="https://www.memtest86.com/downloads/memtest86-usb.zip"
 MEMTEST86V4="https://www.memtest86.com/downloads/memtest86-4.3.7-usb.tar.gz"
 #
 # Variável das dependências do laço de loop do TFTP-HPA Server
-TFTPDEP="bind9 bind9utils isc-dhcp-server"
+#TFTPDEP="bind9 bind9utils isc-dhcp-server"
 #
 # Variável de instalação do serviço de rede TFTP-HPA Server, Syslinux e PXELinux
 TFTPINSTALL="tftpd-hpa tftp-hpa syslinux syslinux-utils syslinux-efi pxelinux initramfs-tools"
