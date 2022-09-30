@@ -7,6 +7,7 @@
 #
 # Configuração do Endereço IPv4 do Ubuntu Server
 network:
+  version: 2
   #
   # Configuração do Protocolo Ethernet do Ubuntu Server
   ethernets:
@@ -37,4 +38,3 @@ network:
         - arena.intra
         #
   # Configuração da versão do Protocolo Ethernet do Ubuntu Server
-version: 2
