@@ -2,15 +2,15 @@
 # Autor: Edson Andrade
 # Github: https://github.com/EdsonAndrade-tech
 # Data de criação: 02/09/2022
-# Data de atualização: 
-# Versão: 0.01
+# Data de atualização: 30/09/2022 
+# Versão: 0.03
 # Ubuntu Server 20.04.x LTS x64 
-# Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Site Oficial do Projeto Shell-In-a-Box: https://code.google.com/archive/p/shellinabox/
 # Site Oficial do Projeto Neofetch: https://github.com/dylanaraps/neofetch
+#
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -19,6 +19,9 @@ source 00-parametros.sh
 LOG=$LOGSCRIPT
 #
 # Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
+clear
 if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
@@ -32,6 +35,9 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 fi
 #
 # Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
 if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "Você tem acesso a Internet, continuando com o script..."
@@ -42,8 +48,11 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		sleep 5
 		exit 1
 fi
-
+#
 # Verificando se a porta 22 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
 if [ "$(nc -vz 127.0.0.1 $PORTSSH &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTSSH está sendo utilizada pelo serviço do OpenSSH Server, continuando com o script..."
@@ -54,8 +63,11 @@ if [ "$(nc -vz 127.0.0.1 $PORTSSH &> /dev/null ; echo $?)" == "0" ]
 		sleep 5
 		exit 1
 fi
-
+#
 # Verificando se a porta 4200 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
 if [ "$(nc -vz 127.0.0.1 $PORTSHELLINABOX &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTSHELLINABOX já está sendo utilizada nesse servidor."
@@ -68,6 +80,10 @@ if [ "$(nc -vz 127.0.0.1 $PORTSHELLINABOX &> /dev/null ; echo $?)" == "0" ]
 fi
 #
 # Verificando todas as dependências do OpenSSH Server
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
 	for name in $SSHDEP
 	do
@@ -83,6 +99,7 @@ echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
 		sleep 5
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
 if [ -f $LOG ]
 	then
 		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
@@ -95,7 +112,7 @@ if [ -f $LOG ]
 		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
 		sleep 5
 fi
-
+#
 # Script de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x LTS
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)

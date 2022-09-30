@@ -1,8 +1,8 @@
 # Autor: Edson Andrade
 # Github: https://github.com/EdsonAndrade-tech
 # Data de criação: 02/09/2022
-# Data de atualização: 
-# Versão: 0.01
+# Data de atualização: 30/09/2022
+# Versão: 0.02
 # Ubuntu Server 20.04.x LTS x64
 #
 # Configuração do Endereço IPv4 do Ubuntu Server
@@ -13,6 +13,8 @@ network:
     #
     # Configuração do Nome da Placa de Rede do Ubuntu Server
     ens18:
+      #
+      #dhcp4: true
       #
       # Configuração do Endereço IPv4 e CIDR Estático do Ubuntu Server
       addresses:
