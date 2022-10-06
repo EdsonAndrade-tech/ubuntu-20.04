@@ -466,7 +466,7 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração awstats.pti.intra.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração awstats.arena.intra.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/awstats/awstats.arena.intra.conf
