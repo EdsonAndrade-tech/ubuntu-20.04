@@ -318,7 +318,7 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/ &>> $LOG
 	cp -v conf/lamp/charset.conf /etc/apache2/conf-available/ &>> $LOG
 	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/ &>> $LOG
-	cp -v conf/lamp/awstats.pti.intra.conf /etc/awstats/ &>> $LOG
+	cp -v conf/lamp/awstats.arena.intra.conf /etc/awstats/ &>> $LOG
 	cp -v conf/lamp/{awstats,awstatsupdate-cron} /etc/cron.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -469,7 +469,7 @@ sleep 5
 echo -e "Editando o arquivo de configuração awstats.pti.intra.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/awstats/awstats.pti.intra.conf
+	vim /etc/awstats/awstats.arena.intra.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -349,7 +349,7 @@ PORTNFSPORTMAPPER="111"
 # 08. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 # 09. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
 # 10. /var/www/html/teste.html = arquivo de teste de páginas HTML
-# 11. /etc/awstats/awstats.pti.intra.conf = arquivo de configuração do serviço AWStats
+# 11. /etc/awstats/awstats.arena.intra.conf = arquivo de configuração do serviço AWStats
 # 12. /etc/cron.d/awstatsupdate-cron = arquivo de atualização das estatísticas do AWStats
 #
 # Arquivos de monitoramento (log) do Serviço de Rede LAMP Server utilizados nesse script
