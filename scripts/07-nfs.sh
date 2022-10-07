@@ -34,9 +34,9 @@
 #
 # Windows CMD (Command Prompt):
 #	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS	
-#	rpcinfo -p nfs.pti.intra
-#	showmount -e nfs.pti.intra
-#	mount -o anon nfs.pti.intra:/mnt/nfs z:
+#	rpcinfo -p nfs.arena.intra
+#	showmount -e nfs.arena.intra
+#	mount -o anon nfs.arena.intra:/mnt/nfs z:
 #	mount
 #	umount z:
 #

@@ -55,18 +55,18 @@
 #					<OK>
 #				<OK>
 #			Autoridades
-#				Arena Prestacao de Servicos
+#				adr-arena
 #					srvapsws01.arena.intra
 #
 # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux)
 # chrome://settings/certificates
 #	Autoridades
-#		Importar: pti-ca.crt
+#		Importar: arena-ca.crt
 #			Yes: Confiar neste certificado para a identificação de websites.
 #			Yes: Confiar neste certificado para identificar usuários de e-mail
 #			Yes: Confiar neste certificado para a identificação de criadores de software
 #		<OK>
-#		org-Arena Prestacao de Servicos
+#		org-adr-arena 
 #			srvapsws01.arena.intra
 #	chrome://restart
 #
