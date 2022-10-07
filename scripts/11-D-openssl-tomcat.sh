@@ -357,9 +357,9 @@ echo -e "Importando o arquivo PKCS#12 PEM no JKS (Java KeyStore) do Tomcat9, sen
 	# -srcstorepass: (Source keystore password)
 	# -alias: (Source alias)
 	#
-	keytool -importkeystore -deststorepass "andrade" -destkeypass "andrade" -destkeystore \
+	keytool -importkeystore -deststorepass $PASSPHRASE -destkeypass $PASSPHRASE -destkeystore \
 	/etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 \
-	-srcstorepass "andrade" -alias tomcat &>> $LOG
+	-srcstorepass $PASSPHRASE -alias tomcat &>> $LOG
 echo -e "Arquivo JKS do Tomcat9 importado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
