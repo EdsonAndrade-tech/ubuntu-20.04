@@ -48,15 +48,15 @@
 #	Preferências ou Opções ou Configurações
 #		Pesquisar em preferências: Ver certificados
 #			Autoridades
-#				Importar: pti-ca.crt
+#				Importar: arena-ca.crt
 #					Yes: Confiar nesta CA para identificar sites
 #					Yes: Confiar nesta autoridade certificadora para identificar usuários de email
 #					<Ver> Examinar certificado da CA
 #					<OK>
 #				<OK>
 #			Autoridades
-#				Bora para Pratica
-#					ptispo01ws01.pti.intra
+#				Arena Prestacao de Servicos
+#					srvapsws01.arena.intra
 #
 # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux)
 # chrome://settings/certificates
@@ -66,8 +66,8 @@
 #			Yes: Confiar neste certificado para identificar usuários de e-mail
 #			Yes: Confiar neste certificado para a identificação de criadores de software
 #		<OK>
-#		org-Bora para Pratica
-#			ptispo01ws01.pti.intra
+#		org-Arena Prestacao de Servicos
+#			srvapsws01.arena.intra
 #	chrome://restart
 #
 # Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux)
@@ -89,7 +89,7 @@
 # Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
 # o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
 # Certification Authority Import Error: The file contained one certificate, which was not 
-# imported: ptispo01ws01.pti.intra: Certificate already exists.
+# imported: srvapsws01.arena.intra: Certificate already exists.
 # Abrir o Menu de Configuração Fácil
 #	Ir para as configurações completas do navegador
 #		Configurações de pesquisa: certificado
@@ -101,13 +101,13 @@
 #							Yes: Confie neste certificado para identificar usuários de e-mail
 #							Yes: Confie neste certificado para identificar fabricantes de software
 #						<OK>
-#					org-Bora para Pratica
-#						ptispo01ws01.pti.intra
+#					org-Arena Prestacao de Servico
+#						srvapsws01.arena.intra
 #
 # Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)
 # Pasta: Download
 #		Abrir como Root (Botão direito do Mouse: Abrir como root)
-#			Copiar: pti-ca.crt
+#			Copiar: arena-ca.crt
 #			Para: /usr/local/share/ca-certificates/
 #		Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 #			update-ca-certificates
@@ -134,7 +134,7 @@
 #		Autoridades de Certificação Raiz Confiáveis
 #			Certificados
 #				Emitido para:
-#					ptispo01ws01.pti.intra
+#					srvapsws01.arena.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
