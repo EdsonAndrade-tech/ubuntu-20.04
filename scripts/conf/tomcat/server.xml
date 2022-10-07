@@ -61,7 +61,7 @@
 		sslProtocol="TLS"
 		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
 		keystoreFile="/etc/tomcat9/tomcat9.jks"
-		keystorePass="vaamonde" />
+		keystorePass="arena" />
     -->
 
     <Engine name="Catalina" defaultHost="localhost">
