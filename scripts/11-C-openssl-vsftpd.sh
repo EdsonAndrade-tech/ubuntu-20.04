@@ -50,9 +50,9 @@
 #		put linux.txt (ou mput)
 #	Cliente de FTP FileZilla
 #		sudo apt update && sudo apt install filezilla
-#			Host...: ftp.pti.intra
+#			Host...: ftp.arena.intra
 #			Usuário: ftpuser
-#			Senha..: pti@2018
+#			Senha..: adr@2021
 #			Porta..: 990
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
